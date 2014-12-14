@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    const unsigned int packetSize = 1024*4;
+    const unsigned int packetSize = 512;
     if(!exists(opt->getValue("file"))) {
         cout << "file not found" << endl;
         return 1;
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
             gsl_vector_const_view gsl_y = gsl_vector_const_view_array( &big_amp[i], small_amp.size() );
             double pearson = gsl_stats_correlation( (double*) gsl_x.vector.data, sizeof(double),
                                                 (double*) gsl_y.vector.data, sizeof(double),
-                                                200 );
+                                                100 );
             res.push_back(pearson);
         }
 
