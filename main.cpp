@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
         return 0;
     }
 
-    const unsigned int packetSize = 512;
+    const unsigned int packetSize = 1024*512;
     if(!exists(opt->getValue("file"))) {
         cout << "file not found" << endl;
         return 1;
